@@ -1,5 +1,5 @@
 // object.c — Content-addressable object store
-
+// minor update for commit
 #include "pes.h"
 #include <stdio.h>
 #include <stdlib.h>
