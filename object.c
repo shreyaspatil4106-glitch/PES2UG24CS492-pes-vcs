@@ -16,7 +16,7 @@ void hash_to_hex(const ObjectID *id, char *hex_out) {
         sprintf(hex_out + i * 2, "%02x", id->hash[i]);
     }
     hex_out[HASH_HEX_SIZE] = '\0';
-}
+}//implement hash generation for objects
 
 int hex_to_hash(const char *hex, ObjectID *id_out) {
     if (strlen(hex) < HASH_HEX_SIZE) return -1;
@@ -56,7 +56,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     const char *type_str;
     if (type == OBJ_BLOB) type_str = "blob";
     else if (type == OBJ_TREE) type_str = "tree";
-    else type_str = "commit";
+    else type_str = "commit";//implement object write functionality
 
     // 1. Header
     char header[64];
@@ -120,7 +120,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
 
 // Read object
 int object_read(const ObjectID *id, ObjectType *type_out, void **data_out, size_t *len_out) {
-    char path[512];
+    char path[512];//implement object read functionality
     object_path(id, path, sizeof(path));
 
     FILE *f = fopen(path, "rb");
@@ -154,7 +154,7 @@ int object_read(const ObjectID *id, ObjectType *type_out, void **data_out, size_
     if (memcmp(computed.hash, id->hash, HASH_SIZE) != 0) {
         free(buffer);
         return -1;
-    }
+    }//"improve error handling in object operations"
 
     // Find header
     unsigned char *null_pos = memchr(buffer, '\0', size);
