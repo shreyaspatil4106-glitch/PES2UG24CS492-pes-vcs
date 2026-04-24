@@ -1,7 +1,7 @@
 // pes.c — CLI entry point and command dispatch
 //
 // This file is PROVIDED. Do not modify.
-
+// minor CLI improvements
 #include "pes.h"
 #include "index.h"
 #include "commit.h"
