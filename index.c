@@ -1,5 +1,5 @@
 // index.c — Staging area implementation
-
+// improved index consistency
 #include "index.h"
 #include <stdio.h>
 #include <stdlib.h>
