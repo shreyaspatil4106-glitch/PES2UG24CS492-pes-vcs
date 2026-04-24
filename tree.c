@@ -1,5 +1,5 @@
 // tree.c — Tree object serialization and construction
-
+// improved tree serialization
 #include "tree.h"
 #include "index.h"
 #include <stdio.h>
